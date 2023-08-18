@@ -5,7 +5,7 @@ import java.util.Comparator;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 enum RomanNumeral {
-    I(1), IV(4), V(5), IX(9), X(10);
+    I(1), IV(4), V(5), IX(9), X(10), XL(40), L(50), XC(90), C(100), CD(400), D(500), CM(900), M(1000);
 
     private int value;
 
@@ -43,7 +43,7 @@ class RomanArabicConverter {
             }
         }
         if (romanNumeral.length() > 0) {
-            throw new IllegalArgumentException(input + " cannot be converted to a Roman Numeral");
+            throw new IllegalArgumentException("throws Exception");
         }
 
         return result;
@@ -51,7 +51,7 @@ class RomanArabicConverter {
 
     public static String arabicToRoman(int number) {
         if ((number <= 0) || (number > 4000)) {
-            throw new IllegalArgumentException(number + " is not in range (0,4000]");
+            throw new IllegalArgumentException("throws Exception");
         }
 
         List<RomanNumeral> romanNumerals = RomanNumeral.getReverseSortedValues();
